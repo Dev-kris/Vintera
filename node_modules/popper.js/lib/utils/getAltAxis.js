@@ -1,0 +1,1 @@
+export default (axis => axis === 'x' ? 'y' : 'x');

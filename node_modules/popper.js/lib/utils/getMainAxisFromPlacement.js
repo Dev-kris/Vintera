@@ -1,0 +1,1 @@
+export default (placement => ['top', 'bottom'].includes(placement) ? 'x' : 'y');

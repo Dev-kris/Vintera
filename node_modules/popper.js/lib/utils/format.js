@@ -1,0 +1,1 @@
+export default ((str, ...args) => [...args].reduce((p, c) => p.replace(/%s/, c), str));

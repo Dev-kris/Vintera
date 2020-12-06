@@ -1,0 +1,1 @@
+export default (element => element && element.jquery ? element[0] : element);

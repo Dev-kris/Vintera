@@ -1,0 +1,1 @@
+export default (placement => placement.split('-')[1]);
