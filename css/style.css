@@ -8,7 +8,7 @@ body{
 
 .hero{
     /* linear-gradient(rgba(62,51,0,0.6), rgba(153,102,51,0.2)),*/
-    background-image:  url(/images/vcam_2.jpg);
+    background-image:  url("../images/vcam_2.jpg");
     height: 70vh;
     background-size: cover;
     padding-top: 8vh;
