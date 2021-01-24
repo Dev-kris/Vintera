@@ -275,3 +275,60 @@ section h1 {
 .btn-primary:hover {
     background-color: #2D9CDB;
 }
+
+
+/*  Single Camera Style  */
+.single-camera{
+    margin-top: 3rem;
+}
+
+.single-camera .col-2{
+    padding: 2rem;
+}
+.single-camera .col-2 img{
+    padding: 0;
+    
+}
+.single-camera h4{
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.single-product select{
+    display: block;
+    padding: 1rem;
+    margin-top: 2rem;
+    
+}
+.single-product input{
+    width: 3rem;
+    height: 4rem;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    border: 1px solid gray;
+}
+
+.camera-details-img{
+ width: 80%;   
+}
+
+
+.buy-button {
+    background-color: transparent;
+    color: #434444;
+    border-radius: 0;
+    border: 1px solid #434444;
+    width: 33%;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
