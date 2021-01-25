@@ -50,6 +50,10 @@ async function getCameraBuyButton() {
     buyButton.textContent = 'More Info';
 }
 
+// Local Storage 
+
+const addToCartButton = document.getElementsByClassName('buy-button');
+console.log(addToCartButton);
 
 
 
@@ -59,3 +63,5 @@ console.log('product number is ' + productNumber);
 getCamaraLenses();
 getCameraDetails();
 getCameraImage();
+
+

@@ -277,9 +277,10 @@ section h1 {
 }
 
 
-/*  Single Camera Style  */
+/*  Single Camera Page  */
 .single-camera{
     margin-top: 3rem;
+    margin-bottom: 6rem;
 }
 
 .single-camera .col-2{
@@ -311,7 +312,7 @@ section h1 {
 }
 
 .camera-details-img{
- width: 80%;   
+ width: 100%;  
 }
 
 
@@ -321,7 +322,9 @@ section h1 {
     border-radius: 0;
     border: 1px solid #434444;
     width: 33%;
-    margin-top: 20px;
+    margin: 1rem 33% 0 33%;
+    min-width: 150px;
+    font-size: 20px
 }
 
 
