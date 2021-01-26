@@ -1,8 +1,12 @@
 const api_url = 'http://localhost:3000/api/cameras/';
 const params = new URLSearchParams(window.location.search);
 const productNumber = params.toString().slice(3);
+const buyButton = document.getElementById('add-cart-button');
 
-
+var e = document.getElementById("product-option");
+var value = e.options[e.selectedIndex].value;
+var text = e.options[e.selectedIndex].text;
+console.log(value);
 
 async function getCameraImage() {
 
@@ -34,34 +38,45 @@ async function getCamaraLenses() {
 
     data.lenses.forEach((lens) => {
         let lensOption = document.createElement("option");
-        
+
         document.getElementById('product-option').appendChild(lensOption).innerHTML = lens;
     })
 
 }
 
-async function getCameraBuyButton() {
-    const response = await fetch(api_url + productNumber);
-    const data = await response.json();
+function getCameraLensSelection(sel) {
 
-    const buyButton = document.createElement('a');
-    buyButton.className = 'btn buy text-warning';
-    buyButton.href = 'camera.html?id=' + data._id;
-    buyButton.textContent = 'More Info';
+    value = sel.options[sel.selectedIndex].text;
+    console.log(value);
 }
+
 
 // Local Storage 
 
-const addToCartButton = document.getElementsByClassName('buy-button');
-console.log(addToCartButton);
+
+
+buyButton.addEventListener('click', (event) => {
+
+    if (value === '1') {
+        swal("Please select a lens!", "", 'error');
+    } else {
+        localStorage.setItem(productNumber, value);
+        console.log(productNumber);
+        swal("Camera Added to Cart!", "", 'success');
+    }
+});
 
 
 
 
+
+
+
+console.log(localStorage);
 console.log('product number is ' + productNumber);
 
+
+getCameraLensSelection;
 getCamaraLenses();
 getCameraDetails();
 getCameraImage();
-
-
