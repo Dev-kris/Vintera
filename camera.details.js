@@ -3,10 +3,8 @@ const params = new URLSearchParams(window.location.search);
 const productNumber = params.toString().slice(3);
 const buyButton = document.getElementById('add-cart-button');
 
-var e = document.getElementById("product-option");
-var value = e.options[e.selectedIndex].value;
-var text = e.options[e.selectedIndex].text;
-console.log(value);
+
+//console.log(value);
 
 async function getCameraImage() {
 
@@ -44,10 +42,16 @@ async function getCamaraLenses() {
 
 }
 
+
+let cameraLensField = document.getElementById("product-option");
+let cameraLensSelection = cameraLensField.options[cameraLensField.selectedIndex].value;
+let text = cameraLensField.options[cameraLensField.selectedIndex].text;
+
+
 function getCameraLensSelection(sel) {
 
-    value = sel.options[sel.selectedIndex].text;
-    console.log(value);
+    cameraLensSelection = sel.options[sel.selectedIndex].text;
+    console.log(cameraLensSelection);
 }
 
 
@@ -55,14 +59,26 @@ function getCameraLensSelection(sel) {
 
 
 
+
+
+
 buyButton.addEventListener('click', (event) => {
 
-    if (value === '1') {
+    if (cameraLensSelection === '1') {
         swal("Please select a lens!", "", 'error');
     } else {
-        localStorage.setItem(productNumber, value);
+        localStorage.setItem(productNumber, cameraLensSelection);
         console.log(productNumber);
+        localStorage.setItem('qty', JSON.stringify({
+            keyTest: 1
+        }));
         swal("Camera Added to Cart!", "", 'success');
+        const person = {
+            name: "Obaseki Nosa",
+            location: "Lagos",
+        }
+
+        localStorage.setItem('user', person);
     }
 });
 
@@ -71,9 +87,9 @@ buyButton.addEventListener('click', (event) => {
 
 
 
-
+console.log(JSON.stringify(localStorage.getItem('user')));
 console.log(localStorage);
-console.log('product number is ' + productNumber);
+//console.log('product number is ' + productNumber);
 
 
 getCameraLensSelection;
