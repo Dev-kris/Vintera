@@ -163,89 +163,70 @@ section h1 {
     opacity: 1;
 }
 /* Cart */
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
+.cart-page-style {
+    margin: 80px auto;
 }
 
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.cart-row {
-    display: flex;
+.cart-camera-details{
+ display: flex;
+    flex-wrap: wrap;
 }
 
-.cart-item {
-    width: 45%;
+th {
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: grey;
+    font-weight: normal;
 }
 
-.cart-price {
-    width: 20%;
-    font-size: 1.2em;
-    color: #333;
+td{
+    padding: 10px 5px;
 }
 
-.cart-quantity {
-    width: 35%;
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
 }
 
-.cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
+td a {
+    color: white;
+    font-size: 12px;
 }
 
-.cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #56CCF2;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
-}
-
-.cart-row:last-child {
-    border-bottom: 1px solid black;
-}
-
-.cart-row:last-child .cart-column {
-    border: none;
-}
-
-.cart-total {
-    text-align: end;
-    margin-top: 10px;
+.thumbnail-format {
+    width: auto;
+    height: 80px;
     margin-right: 10px;
 }
 
-.cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
+.cart-totals{ 
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.cart-totals table{
+    border-top: 3px solid white;
+    width: 100%;
+    max-width: 350px;
 }
 
-.cart-total-price {
-    color: #333;
-    font-size: 1.1em;
+td:last-child{
+    text-align: right;
+    
 }
+th:last-child{
+    text-align: right;
+}
+
+
+
 
 .btn-purchase {
     display: block;
