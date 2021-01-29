@@ -55,30 +55,27 @@ function getCameraLensSelection(sel) {
 }
 
 
-// Local Storage 
 
 
 
-
+//console.log(parseInt(localStorage.getItem(productNumber)) +50);
 
 
 buyButton.addEventListener('click', (event) => {
 
+
+    let qty = parseInt(document.getElementById('qty').value);
+    let qtyInteger = parseInt(localStorage.getItem(productNumber)) || '';
+    let qtyTotal = qty + qtyInteger;
+
+
     if (cameraLensSelection === '1') {
         swal("Please select a lens!", "", 'error');
     } else {
-        localStorage.setItem(productNumber, cameraLensSelection);
-        console.log(productNumber);
-        localStorage.setItem('qty', JSON.stringify({
-            keyTest: 1
-        }));
+        localStorage.setItem(productNumber, qtyTotal);
+        
         swal("Camera Added to Cart!", "", 'success');
-        const person = {
-            name: "Obaseki Nosa",
-            location: "Lagos",
-        }
 
-        localStorage.setItem('user', person);
     }
 });
 
@@ -87,7 +84,7 @@ buyButton.addEventListener('click', (event) => {
 
 
 
-console.log(JSON.stringify(localStorage.getItem('user')));
+
 console.log(localStorage);
 //console.log('product number is ' + productNumber);
 
