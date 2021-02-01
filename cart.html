@@ -28,6 +28,9 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/product.html">All Cameras</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
@@ -44,46 +47,30 @@
         <!-------- Cart-------->
 
         <section class="container text-white cart-page-style">
-            <table>
+            <table id="cart-table">
                 <tr>
                     <th>product</th>
                     <th>quantity</th>
                     <th>price</th>
                     <th>subtotal</th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="cart-camera-details ">
-                            <div id="cart-thumbnail">
-
-                            </div>
-                            <div id="camera-details">
-
-                                <a href=""> Remove Item</a>
-                            </div>
-                        </div>
-
-                    </td>
-                    <td><input id="camera-qty" type="number" value="1"></td>
-                    <td id="camera-price"></td>
-                    <td id="camera-subtotal"></td>
-                </tr>
                 
+
             </table>
 
             <div class="cart-totals text-white">
                 <table>
                     <tr>
                         <td> Subtotal:</td>
-                        <td> subtotal data:</td>
+                        <td id="subtotal-data"> </td>
                     </tr>
                     <tr>
-                        <td> tax:</td>
-                        <td> tax data:</td>
+                        <td> GST 20%:</td>
+                        <td id="tax-data"> </td>
                     </tr>
                     <tr>
-                        <td> total:</td>
-                        <td> total data:</td>
+                        <td> Total:</td>
+                        <td id="total-data"> </td>
                     </tr>
                 </table>
             </div>
