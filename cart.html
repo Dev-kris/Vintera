@@ -48,13 +48,13 @@
 
         <section class="container text-white cart-page-style">
             <table id="cart-table">
-                <tr>
-                    <th>product</th>
-                    <th>quantity</th>
-                    <th>price</th>
-                    <th>subtotal</th>
+                <tr class="text-warning">
+                    <th>Camera</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
                 </tr>
-                
+
 
             </table>
 
@@ -69,18 +69,117 @@
                         <td id="tax-data"> </td>
                     </tr>
                     <tr>
-                        <td> Total:</td>
+                        <td> Total: </td>
+
                         <td id="total-data"> </td>
                     </tr>
                 </table>
             </div>
         </section>
+        
         <!-------- Cart-------->
+
+        <!-------- Checkout Form-------->
+        <hr class="my-4">
+        <div class="container text-white">
+            <h4 class="mb-3">Billing Address</h4>
+            <form novalidation>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Jean" required>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Smith" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <label for="country" class="form-label">Country</label>
+                        <select id="country" class="form-control">
+                            <option value="France">France</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Portugal">Portugal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" id="state" class="form-control" placeholder="Paris" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="postcode" class="form-label">Postal Code</label>
+                        <input type="number" id="postCode" class="form-control" placeholder="75000" required>
+                        <div class="invalid-feedback">
+                            Valid postal code is required.
+                        </div>
+
+                    </div>
+       
+                    <hr class="my-4">
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="form-check">
+                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <label for="creditCard">Credit Card</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" required>
+                        <label for="creditCard">CB</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" required>
+                        <label for="creditCard">PayPal</label>
+                    </div>
+                    <div class="row my-3 gy-3">
+                        <div class="col-md-5">
+                            <label for="fullName" class="form-label">Name on Card</label>
+                            <input type="text" id="fullName" class="form-control" required>
+                            <small class="text-muted">Full name as written on card.</small>
+                            <div class="invalid-feedback">Name on card is required.</div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="cc-number" class="form-label">Credit Card Number</label>
+                            <input type="text" id="cc-number" class="form-control" required>
+                            <div class="invalid-feedback">Credit card number is required.</div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="exp-date" class="form-label">Expiration Date</label>
+                            <input type="text" id="exp-date" class="form-control" required>
+                            <div class="invalid-feedback">Expiration date is required.</div>
+                        </div>
+                        <div class="col-md-1">
+                            <label for="exp-date" class="form-label">CVV</label>
+                            <input type="text" id="cvv" class="form-control" required>
+                            <div class="invalid-feedback">CVV number is required.</div>
+                        </div>
+
+                        
+                        <button class="btn btn-primary btn-lg my-4">Submit Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <!-------- Checkout Form-------->
 
 
         <!-- Footer-->
         <footer class="bg-dark text-white pt-1 pb-3">
-            <div class="container text-center text-md-left">
+            <div class="container text-center text-md-left mt-5">
                 <div class="row text-center text-md-left">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
@@ -127,7 +226,7 @@
                         </p>
 
                     </div>
-                    <hr class="mb-4">
+                    <hr class="my-4">
                     <div class="row align-items-center"></div>
                     <div class="col-md-7 col-lg-8">
                         <p>Copyright ©2020

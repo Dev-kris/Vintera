@@ -7,31 +7,45 @@ const buyButton = document.getElementById('add-cart-button');
 async function buildCartHTML() {
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
-
-        const response = await fetch(api_url + key);
+        let cameraKeyToRemove = key;
+        
+        const response = await fetch(api_url);
         const data = await response.json();
 
         // create cart table structure for each item
-        const tableRow = document.createElement('tr')
-        const tableData = document.createElement('td')
-        const tableDataDiv = document.createElement('div')
-        const tableDataDivImg = document.createElement('div')
-        const tableDataDivDetails = document.createElement('div')
-        const tableDataQty = document.createElement('td')
-        const tableDataQtyInput = document.createElement('input')
-        const tableDataPrice = document.createElement('td')
-        const tableDataSubtotal = document.createElement('td')
+        const tableRow = document.createElement('tr');
+        const tableData = document.createElement('td');
+        const tableDataDiv = document.createElement('div');
+        const tableDataDivImg = document.createElement('a');
+        const tableDataDivDetails = document.createElement('div');
+        const tableDataQty = document.createElement('td');
+        //const tableDataQtyInput = document.createElement('input');
+        const tableDataPrice = document.createElement('td');
+        const tableDataSubtotal = document.createElement('td');
+        const removeButton = document.createElement('td');
+        const removeButtonBtn = document.createElement('button');
 
         // set attributes to each element
         tableRow.id = 'table-row' + [i];
         tableData.id = 'table-row-data' + [i];
         tableDataDiv.id = 'cart-camera-details' + [i];
         tableDataDivImg.id = 'cart-thumbnail' + [i];
+        tableDataDivImg.href = 'camera.html' + '?id=' + key;
         tableDataDivDetails.id = 'camera-details' + [i];
         tableDataQty.id = 'table-data-qty' + [i];
-        tableDataQtyInput.id = 'camera-qty' + [i];
+       // tableDataQtyInput.id = 'camera-qty' + [i];
         tableDataPrice.id = 'camera-price' + [i];
         tableDataSubtotal.id = 'camera-subtotal' + [i];
+        removeButton.id = 'remove-td' + [i];
+        removeButtonBtn.id = 'remove-tdd' + [i];
+        
+        // add button to each product to allow removal
+        removeButtonBtn.className = 'btn filter-red btn-remove-cart';
+        removeButton.addEventListener('click', function () {
+            localStorage.removeItem(cameraKeyToRemove);
+           location.reload();
+        });
+
 
         // attach each new element to the page
         document.getElementById('cart-table').appendChild(tableRow);
@@ -40,9 +54,11 @@ async function buildCartHTML() {
         document.getElementById('cart-camera-details' + [i]).appendChild(tableDataDivImg);
         document.getElementById('cart-camera-details' + [i]).appendChild(tableDataDivDetails);
         document.getElementById('table-row' + [i]).appendChild(tableDataQty);
-        document.getElementById('table-data-qty' + [i]).appendChild(tableDataQtyInput);
+        //document.getElementById('table-data-qty' + [i]).appendChild(tableDataQtyInput);
         document.getElementById('table-row' + [i]).appendChild(tableDataPrice);
         document.getElementById('table-row' + [i]).appendChild(tableDataSubtotal);
+        document.getElementById('table-row' + [i]).appendChild(removeButton);
+        document.getElementById('remove-td' + [i]).appendChild(removeButtonBtn);
 
     }
 }
@@ -79,7 +95,8 @@ async function getCameraDetails() {
         document.getElementById('camera-price' + [i]).innerHTML = '$ ' + price;
 
         const qty = parseInt(localStorage.getItem(key));
-        document.getElementById('camera-qty' + [i]).setAttribute('value', qty);
+        document.getElementById('table-data-qty' + [i]).innerHTML = qty;
+        //document.getElementById('camera-qty' + [i]).setAttribute('value', qty);
 
         const lineSubtotal = qty * (data.price / 100);
         document.getElementById('camera-subtotal' + [i]).innerHTML = '$ ' + lineSubtotal;
@@ -89,7 +106,6 @@ async function getCameraDetails() {
 async function getCartTotals() {
 
     let cartSubtotal = 0;
-
 
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
@@ -103,20 +119,12 @@ async function getCartTotals() {
     }
     let cartTax = cartSubtotal * .2;
     let cartTotal = cartSubtotal + cartTax;
-    console.log(cartSubtotal);
-    console.log(cartTax);
-    console.log(cartTotal);
 
-    document.getElementById('subtotal-data').innerHTML = '$ ' + cartSubtotal;
-    document.getElementById('tax-data').innerHTML = '$ ' + cartTax;
-    document.getElementById('total-data').innerHTML = '$ ' + cartTotal;
+    document.getElementById('subtotal-data').innerHTML = '$ ' + cartSubtotal.toFixed(2);
+    document.getElementById('tax-data').innerHTML = '$ ' + cartTax.toFixed(2);
+    document.getElementById('total-data').innerHTML = '$ ' + cartTotal.toFixed(2);
 
 }
-
-
-
-
-
 
 
 
@@ -126,6 +134,3 @@ getCartTotals();
 buildCartHTML();
 getCameraDetails();
 getCameraImage();
-
-
-//root.append(imgDiv, name, price, description, buyButton);

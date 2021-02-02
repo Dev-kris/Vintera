@@ -18,9 +18,11 @@ body {
     margin-bottom: 2rem;
 
 }
-.carousel-style{
+
+.carousel-style {
     margin-top: -20vh;
 }
+
 .angled-gradient-button {
     background-size: 220%;
     box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
@@ -99,11 +101,12 @@ section h1 {
     object-fit: contain;
 }
 
-.footer-text-style:hover{
-    color: darkgoldenrod;!important
+.footer-text-style:hover {
+    color: darkgoldenrod;
+     !important
 }
 
-.social-icon-style:hover{
+.social-icon-style:hover {
     margin-top: 2px;
 }
 
@@ -162,43 +165,34 @@ section h1 {
 .image:hover .overlay {
     opacity: 1;
 }
+
 /* Cart */
 .cart-page-style {
-    margin: 80px auto;
+    margin: 2rem auto;
 }
 
 table {
-    width: 100%;
+    margin-left: auto;
+    width: 90%;
     border-collapse: collapse;
 }
 
-.cart-camera-details{
- display: flex;
-    flex-wrap: wrap;
-}
 
 th {
-    text-align: left;
+    text-align: center;
     padding: 5px;
-    color: white;
-    background: grey;
+    font-size: 18px;
     font-weight: normal;
+
 }
 
-td{
+td {
     padding: 10px 5px;
+    width: 25%;
+    text-align: center;
+    border-spacing: 10px;
 }
 
-td input{
-    width: 40px;
-    height: 30px;
-    padding: 5px;
-}
-
-td a {
-    color: white;
-    font-size: 12px;
-}
 
 .thumbnail-format {
     width: auto;
@@ -206,27 +200,59 @@ td a {
     margin-right: 10px;
 }
 
-.cart-totals{ 
+.cart-totals {
     display: flex;
     justify-content: flex-end;
-    
+
 }
-.cart-totals table{
+
+.cart-totals table {
     border-top: 3px solid white;
     width: 100%;
     max-width: 350px;
 }
 
-td:last-child{
+td:nth-child(4) {
     text-align: right;
-    
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 1rem;
 }
-th:last-child{
+
+th:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+th:last-child {
     text-align: right;
+    font-size: 20px;
+    border-radius: 0 15px 15px 0;
 }
 
 
+.btn-remove-cart {
+    border-radius: 50%;
+    background-image: url(/images/trash-bootstrap.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    padding: 15px;
 
+}
+
+.filter-red {
+    /* filter: invert(0.5) sepia(1) saturate(288) hue-rotate(352deg); */
+    filter: invert(0.5) sepia(1) saturate(0) hue-rotate(554deg);
+   /* filter: invert(0.5) sepia(1) saturate(5) hue-rotate(337deg); */
+}
+
+.btn-remove-cart:hover {
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: -3px 4px 10px rgba(0, 0, 0, .5),
+        inset 0 0 20px 10px rgba(0, 0, 0, .1);
+}
 
 .btn-purchase {
     display: block;
@@ -245,6 +271,7 @@ th:last-child{
 .btn-danger:hover {
     background-color: #CC4C4C;
 }
+
 .btn-primary {
     color: white;
     background-color: #56CCF2;
@@ -259,31 +286,34 @@ th:last-child{
 
 
 /*  Single Camera Page  */
-.single-camera{
+.single-camera {
     margin-top: 3rem;
-    margin-bottom: 6rem;
+    margin-bottom: 12rem;
 }
 
-.single-camera .col-2{
+.single-camera .col-2 {
     padding: 2rem;
 }
-.single-camera .col-2 img{
+
+.single-camera .col-2 img {
     padding: 0;
-    
+
 }
-.single-camera h4{
+
+.single-camera h4 {
     margin: 2rem 0;
     font-size: 2rem;
     font-weight: bold;
 }
 
-.single-product select{
+.single-product select {
     display: block;
     padding: 1rem;
     margin-top: 2rem;
-    
+
 }
-.single-product input{
+
+.single-product input {
     width: 3rem;
     height: 4rem;
     padding-left: 1rem;
@@ -292,8 +322,8 @@ th:last-child{
     border: 1px solid gray;
 }
 
-.camera-details-img{
- width: 100%;  
+.camera-details-img {
+    width: 100%;
 }
 
 
@@ -307,12 +337,3 @@ th:last-child{
     min-width: 150px;
     font-size: 20px
 }
-
-
-
-
-
-
-
-
-

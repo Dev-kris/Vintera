@@ -38,7 +38,7 @@ async function getCamaraLenses() {
         let lensOption = document.createElement("option");
 
         document.getElementById('product-option').appendChild(lensOption).innerHTML = lens;
-    })
+    });
 
 }
 
@@ -58,9 +58,6 @@ function getCameraLensSelection(sel) {
 
 
 
-//console.log(parseInt(localStorage.getItem(productNumber)) +50);
-
-
 buyButton.addEventListener('click', (event) => {
 
 
@@ -73,7 +70,7 @@ buyButton.addEventListener('click', (event) => {
         swal("Please select a lens!", "", 'error');
     } else {
         localStorage.setItem(productNumber, qtyTotal);
-        
+
         swal("Camera Added to Cart!", "", 'success');
 
     }
