@@ -245,7 +245,7 @@ th:last-child {
 .filter-red {
     /* filter: invert(0.5) sepia(1) saturate(288) hue-rotate(352deg); */
     filter: invert(0.5) sepia(1) saturate(0) hue-rotate(554deg);
-   /* filter: invert(0.5) sepia(1) saturate(5) hue-rotate(337deg); */
+    /* filter: invert(0.5) sepia(1) saturate(5) hue-rotate(337deg); */
 }
 
 .btn-remove-cart:hover {
@@ -291,41 +291,15 @@ th:last-child {
     margin-bottom: 12rem;
 }
 
-.single-camera .col-2 {
-    padding: 2rem;
-}
-
-.single-camera .col-2 img {
-    padding: 0;
-
-}
-
 .single-camera h4 {
     margin: 2rem 0;
     font-size: 2rem;
     font-weight: bold;
 }
 
-.single-product select {
-    display: block;
-    padding: 1rem;
-    margin-top: 2rem;
-
-}
-
-.single-product input {
-    width: 3rem;
-    height: 4rem;
-    padding-left: 1rem;
-    font-size: 1.3rem;
-    margin-right: 1rem;
-    border: 1px solid gray;
-}
-
 .camera-details-img {
     width: 100%;
 }
-
 
 .buy-button {
     background-color: transparent;
@@ -336,4 +310,12 @@ th:last-child {
     margin: 1rem 33% 0 33%;
     min-width: 150px;
     font-size: 20px
+}
+
+.buy-button:hover {
+    background-color: #434444;
+    color: #fff;
+}
+.camera-qty-field{
+    width: 3rem;
 }
