@@ -1,7 +1,18 @@
+@font-face { font-family: 'simplicity'; src: url('/fonts/Kalam.ttf'); } 
+@font-face { font-family: 'rocksalt'; src: url('/fonts/RockSalt.ttf'); } 
+
+
 body {
     background-color: #212529;
     margin: 0;
     padding: 0;
+    background-image: url();
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: 'simplicity';
+   font-size: 18px;
+   
+    
 }
 
 .logo-style {
@@ -21,23 +32,28 @@ body {
 
 .carousel-style {
     margin-top: -20vh;
+    width: 50vh;
+    border-radius: 50%;
+    
+}
+.carousel-caption h3 {
+    text-transform: uppercase;
+    color: coral;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .angled-gradient-button {
     background-size: 220%;
     box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
-    color: coral;
     background-color: transparent;
     background-position: 100%;
-    border: 3px solid coral;
-    text-transform: uppercase;
     padding: 8px 16px;
+  
     border-radius: 3px;
     transition: all .2s ease-out;
-    font-weight: 900;
     cursor: pointer;
     letter-spacing: 2px;
-    background-image: linear-gradient(110deg, coral 0%, coral 50%, transparent 50%, transparent 100%);
+    background-image: linear-gradient(110deg, #4F5154 0%, #6c6e70 50%, transparent 50%, transparent 100%);
     font-size: 14px;
 }
 
@@ -54,27 +70,12 @@ body {
 
 section h1 {
     text-transform: uppercase;
-    font-size: ;
-    color: #FFDF6C;
+   
+    font-size: 70px ;
+    color: #FFC107;
     text-shadow: 1px 1px 1px #000;
 }
 
-
-.card-style {
-    border-radius: 25px;
-    margin-top: 0rem;
-    margin-left: 10%;
-    background-color: rgba(237, 237, 237, .6);
-    color: black;
-}
-
-.d-block {}
-
-.carousel-caption h3 {
-    text-transform: uppercase;
-    color: coral;
-    text-shadow: 1px 1px 1px #000;
-}
 
 .rotated-button {
     background-color: rgba(46, 49, 49, .9);
@@ -95,20 +96,6 @@ section h1 {
         inset 0 0 20px 10px rgba(0, 0, 0, .1);
 }
 
-.w-100 {
-    width: 60vh;
-    height: 40vh;
-    object-fit: contain;
-}
-
-.footer-text-style:hover {
-    color: darkgoldenrod;
-     !important
-}
-
-.social-icon-style:hover {
-    margin-top: 2px;
-}
 
 /* Product Page */
 

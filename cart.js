@@ -165,11 +165,20 @@ async function postOrder() {
     let email = document.getElementById('email').value;
 
     let products = [];
+    let cartTotalConfirmation = 0;
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
-        products.push(key);
-    }
 
+        const response = await fetch(api_url + key);
+        const data = await response.json();
+
+        products.push(key);
+
+        const qty = parseInt(localStorage.getItem(key));
+        const cartTotal = qty * (data.price / 100);
+        cartTotalConfirmation += cartTotal * 1.2;
+    }
+    
     let contact = {
         lastName,
         firstName,
@@ -186,14 +195,13 @@ async function postOrder() {
     const url = 'http://localhost:3000/api/cameras/order';
     let http = new XMLHttpRequest();
     http.onload = function () {
-        alert(http.responseText)
+        sessionStorage.setItem(cartTotalConfirmation, http.responseText)
+        console.log(sessionStorage);
     };
 
     http.open("POST", url, true);
     http.setRequestHeader('Content-Type', 'application/json');
     http.send(jsonOrder);
-    console.log(jsonOrder);
-    console.log(http.responseText)
 };
 
 
