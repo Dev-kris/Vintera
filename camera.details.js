@@ -1,4 +1,3 @@
-const api_url = 'http://localhost:3000/api/cameras/';
 const params = new URLSearchParams(window.location.search);
 const productNumber = params.toString().slice(3);
 const buyButton = document.getElementById('add-cart-button');

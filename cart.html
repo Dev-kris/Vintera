@@ -17,7 +17,7 @@
 <body>
     <div class="page-container">
         <header>
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-4 mr-md-5">
+            <nav class="navbar navbar-expand-sm navbar-dark py-4 mr-md-5">
                 <a class="navbar-brand logo-style" href="index.html"><img src="images/vintera-logo.png" height=40 alt="Vintera Company Logo"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
                     <span class="navbar-toggler-icon"></span>
@@ -83,7 +83,7 @@
         <div class="container text-white">
             <h4 class="mb-3">Address</h4>
 
-            <form class="needs-validation" novalidate onkeydown="return event.key != 'Enter';">
+            <form class="needs-validation" novalidate id="form" onkeydown="return event.key != 'Enter';">
                 <div class="row g-3">
                     <div class="col-sm-6 position-relative">
                         <label for="firstName" class="form-label">First Name</label>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-md-4 position-relative">
                         <label for="address" class="form-label">Address</label>
-                        <input type="text" id="address" class="form-control" placeholder="123 rue lepic" pattern="[A-Za-z1-9#. ]{*}" required>
+                        <input type="text" id="address" class="form-control" placeholder="123 rue lepic" pattern="(?=.*\d).{5,}" required>
                         <div class="invalid-tooltip">
                             Valid address is required.
                         </div>
@@ -139,60 +139,19 @@
                             Valid email address is required.
                         </div>
                     </div>
-
-                    <hr class="my-4">
-                    <h4 class="mb-3">Payment</h4>
-                    <div class="form-check">
-                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                        <label for="creditCard">Credit Card</label>
                     </div>
-                    <div class="form-check">
-                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" required>
-                        <label for="creditCard">CB</label>
-                    </div>
-                    <div class="form-check">
-                        <input id="creditCard" name="paymentMethod" type="radio" class="form-check-input" required>
-                        <label for="creditCard">PayPal</label>
-                    </div>
-                    <div class="row my-3 gy-3 ">
-                        <div class="col-md-5 position-relative">
-                            <label for="fullName" class="form-label">Name on Card</label>
-                            <input type="text" id="fullName" class="form-control" pattern="[A-Za-z ]{2,26}" required>
-                            <small class="text-muted">Full name as written on card.</small>
-                            <div class="invalid-tooltip">Full name is required.</div>
-                        </div>
 
-                        <div class="col-md-3 position-relative">
-                            <label for="cc-number" class="form-label">Credit Card Number</label>
-                            <input type="text" id="cc-number" inputmode="numeric" pattern="[0-9]{13,19}" class="form-control" required>
-                            <div class="invalid-tooltip">Valid credit card number is required.</div>
-                        </div>
-
-                        <div class="col-md-2 position-relative">
-                            <label for="exp-date" class="form-label">Exp Date</label>
-                            <input type="text" id="exp-date" inputmode="numeric" pattern="[0-9]{4}" class="form-control" required>
-                            <div class="invalid-tooltip">Expiration date MMYY.</div>
-
-                        </div>
-                        <div class="col-md-1 position-relative">
-                            <label for="exp-date" class="form-label">CVV</label>
-                            <input type="text" inputmode="numeric" pattern="[0-9]{3}" id="cvv" class="form-control" required>
-                            <div class="invalid-tooltip">3 digit CVV number is required.</div>
-                        </div>
-
-
-                        
-                    </div>
-                </div>
+                   
+                
             </form>
-            <button onclick="postOrder()" class="btn angled-gradient-button buy-button text-warning btn-lg my-4" id="order-submit-btn" >Submit Order</button>
+            <button onclick="postOrder()" disabled class="btn angled-gradient-button buy-button text-warning btn-lg my-4" id="order-submit-btn" > Submit Order</button>
         </div>
 
         <!-------- Checkout Form-------->
 
 
         <!-- Footer-->
-        <footer class="bg-dark text-white pt-1 pb-3">
+        <footer class="text-white pt-1 pb-3">
             <div class="container text-center text-md-left mt-5">
                 <div class="row text-center text-md-left">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -286,8 +245,10 @@
             </div>
         </footer>
         <!-- Footer-->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./global-variables.js"></script>
         <script src="./cart.js"></script>
     </div>
 </body>

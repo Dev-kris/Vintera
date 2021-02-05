@@ -1,5 +1,3 @@
-const api_url = 'http://localhost:3000/api/cameras/';
-
 async function getProducts() {
     const response = await fetch(api_url);
     const data = await response.json();

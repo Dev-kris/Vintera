@@ -1,4 +1,4 @@
-@font-face { font-family: 'simplicity'; src: url('/fonts/Kalam.ttf'); } 
+@font-face { font-family: 'kalam'; src: url('/fonts/Kalam.ttf'); } 
 @font-face { font-family: 'rocksalt'; src: url('/fonts/RockSalt.ttf'); } 
 
 
@@ -6,10 +6,10 @@ body {
     background-color: #212529;
     margin: 0;
     padding: 0;
-    background-image: url();
-    background-size: cover;
+    background-image: url('/images/film-bg15.png');
+    background-size: 10;
     background-repeat: repeat;
-    font-family: 'simplicity';
+    font-family: 'kalam';
    font-size: 18px;
    
     
@@ -215,7 +215,6 @@ th:last-child {
     font-size: 20px;
     border-radius: 0 15px 15px 0;
 }
-
 
 .btn-remove-cart {
     border-radius: 50%;

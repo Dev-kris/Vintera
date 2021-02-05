@@ -1,4 +1,3 @@
-const api_url = 'http://localhost:3000/api/cameras/';
 const params = new URLSearchParams(window.location.search);
 const productNumber = params.toString().slice(3);
 const buyButton = document.getElementById('add-cart-button');
@@ -58,7 +57,7 @@ async function buildCartHTML() {
         document.getElementById('remove-td' + [i]).appendChild(removeButtonBtn);
 
     }
-    getCameraImage();
+    await getCameraImage();
 }
 async function getCameraImage() {
 
@@ -74,7 +73,7 @@ async function getCameraImage() {
         cameraImage.className = 'thumbnail-format';
         document.getElementById('cart-thumbnail' + [i]).appendChild(cameraImage);
     }
-    getCameraDetails();
+    await getCameraDetails();
 
 }
 
@@ -102,12 +101,12 @@ async function getCameraDetails() {
         document.getElementById('camera-subtotal' + [i]).innerHTML = '$ ' + lineSubtotal;
 
     }
-    getCartTotals();
+    await getCartTotals();
 
 }
-let testTotal = 0;
 async function getCartTotals() {
 
+    let testTotal = 0;
     let cartSubtotal = 0;
 
     for (var i = 0; i < localStorage.length; i++) {
@@ -124,22 +123,31 @@ async function getCartTotals() {
     var cartTotal = cartSubtotal + cartTax;
     testTotal += cartTotal;
 
+
     document.getElementById('subtotal-data').innerHTML = '$ ' + cartSubtotal.toFixed(2);
     document.getElementById('tax-data').innerHTML = '$ ' + cartTax.toFixed(2);
     document.getElementById('total-data').innerHTML = '$ ' + cartTotal.toFixed(2);
+    return testTotal;
 }
-console.log('The test total is ' + testTotal);
+// console.log('The test total is ' + testTotal);
 // form validation
+
 
 (function () {
     'use strict'
     var forms = document.querySelectorAll('.needs-validation')
     Array.prototype.slice.call(forms)
         .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
+            form.addEventListener('change', function (event) {
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
+                    document.getElementById("order-submit-btn").disabled = true;
+
+                } else {
+                    console.log('validation test');
+                    document.getElementById("order-submit-btn").disabled = false;
+
                 }
 
                 form.classList.add('was-validated')
@@ -156,7 +164,8 @@ let cartTotal = document.getElementById('total-data').textContent;
 
 async function postOrder() {
 
-    var firstName = document.getElementById('firstName').value;
+    let testTotalTwo = await getCartTotals();
+    let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
     let address = document.getElementById('address').value;
     let country = document.getElementById('country').value;
@@ -178,7 +187,7 @@ async function postOrder() {
         const cartTotal = qty * (data.price / 100);
         cartTotalConfirmation += cartTotal * 1.2;
     }
-    
+
     let contact = {
         lastName,
         firstName,
@@ -192,23 +201,25 @@ async function postOrder() {
     }
     let jsonOrder = JSON.stringify(order);
 
-    const url = 'http://localhost:3000/api/cameras/order';
+    // set variables in separate js file --- look at environment variable
+
     let http = new XMLHttpRequest();
     http.onload = function () {
-        sessionStorage.setItem(cartTotalConfirmation, http.responseText)
+        sessionStorage.setItem(cartTotalConfirmation, http.responseText);
+        window.location = "./confirmation.html";
         console.log(sessionStorage);
     };
 
-    http.open("POST", url, true);
+    http.open("POST", post_url, true);
     http.setRequestHeader('Content-Type', 'application/json');
     http.send(jsonOrder);
-};
+}
 
 
+if (localStorage.length > 0) {
+    buildCartHTML();
 
-buildCartHTML();
+} else {
+    swal("Your cart is empty!", "", 'error');
 
-
-
-var tdElem = document.getElementById('total-data');
-var tdText = tdElem.innerText | tdElem.textContent;
+}

@@ -20,7 +20,7 @@
         <!-- NavBar-->
 
         <header>
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-4 mr-md-5">
+            <nav class="navbar navbar-expand-sm navbar-dark py-4 mr-md-5">
                 <a class="navbar-brand logo-style" href="index.html"><img src="images/vintera-logo.png" height=40 alt="Vintera Company Logo"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
                     <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,19 @@
                 <h2 class="display-6 text-white">Your order is being processed.</h2>
                 <p class="lead text-white"><strong>Please check your email</strong> for updates on your order.</p>
                 <hr>
-                <div class="row ">
+                <section class="container text-white cart-page-style">
+            <table id="cart-table">
+                <tr class="text-warning">
+                    <th>Camera</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                </tr>
+
+
+            </table>
+               </section>
+                <div class="row">
                     <div class="col">
                         <p class="text-white">
                             Order Number: <span class="text-warning" id="order-number"></span>
@@ -63,12 +75,12 @@
                 <div class="row">
                     <div class="col">
                         <p class="text-white">
-                            Order Total: <span id="order-total" class="text-warning"></span>
+                            Order Total Including Tax: <span id="order-total" class="text-warning"></span>
                         </p>
                     </div>
                 </div>
                 <p class="lead">
-                    <a class="btn buy-button angled-gradient-button btn-sm text-warning mb-md-5" href="https://bootstrapcreative.com/" role="button">Return Home</a>
+                    <a class="btn buy-button angled-gradient-button btn-sm text-warning mb-md-5" href="./index.html" role="button">Return Home</a>
                 </p>
             </div>
 
@@ -77,7 +89,7 @@
 
 
         <!-- Footer-->
-        <footer class="bg-dark text-white pt-md-5 pb-3">
+        <footer class="text-white pt-md-5 pb-3">
             <div class="container text-center text-md-left mt-5">
                 <div class="row text-center text-md-left">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -173,7 +185,9 @@
         <!-- Footer-->
 
         <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./global-variables.js"></script>
         <script src="./order-confirmation.js"></script>
+        
     </div>
 </body>
 
