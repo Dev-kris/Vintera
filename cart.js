@@ -106,7 +106,7 @@ async function getCameraDetails() {
 }
 async function getCartTotals() {
 
-    let testTotal = 0;
+   
     let cartSubtotal = 0;
 
     for (var i = 0; i < localStorage.length; i++) {
@@ -121,15 +121,13 @@ async function getCartTotals() {
     }
     let cartTax = cartSubtotal * .2;
     var cartTotal = cartSubtotal + cartTax;
-    testTotal += cartTotal;
-
 
     document.getElementById('subtotal-data').innerHTML = '$ ' + cartSubtotal.toFixed(2);
     document.getElementById('tax-data').innerHTML = '$ ' + cartTax.toFixed(2);
     document.getElementById('total-data').innerHTML = '$ ' + cartTotal.toFixed(2);
-    return testTotal;
+   
 }
-// console.log('The test total is ' + testTotal);
+
 // form validation
 
 
@@ -158,13 +156,10 @@ async function getCartTotals() {
 // post cart and form data to api
 
 
-
 let cartTotal = document.getElementById('total-data').textContent;
-
 
 async function postOrder() {
 
-    let testTotalTwo = await getCartTotals();
     let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
     let address = document.getElementById('address').value;
@@ -201,8 +196,6 @@ async function postOrder() {
     }
     let jsonOrder = JSON.stringify(order);
 
-    // set variables in separate js file --- look at environment variable
-
     let http = new XMLHttpRequest();
     http.onload = function () {
         sessionStorage.setItem(cartTotalConfirmation, http.responseText);
@@ -214,7 +207,6 @@ async function postOrder() {
     http.setRequestHeader('Content-Type', 'application/json');
     http.send(jsonOrder);
 }
-
 
 if (localStorage.length > 0) {
     buildCartHTML();
