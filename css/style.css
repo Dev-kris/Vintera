@@ -1,12 +1,12 @@
-@font-face { font-family: 'kalam'; src: url('/fonts/Kalam.ttf'); } 
-@font-face { font-family: 'rocksalt'; src: url('/fonts/RockSalt.ttf'); } 
+@font-face { font-family: 'kalam'; src: url('../fonts/Kalam.ttf'); } 
+@font-face { font-family: 'rocksalt'; src: url('../fonts/RockSalt.ttf'); } 
 
 
 body {
     background-color: #212529;
     margin: 0;
     padding: 0;
-    background-image: url('/images/film-bg15.png');
+    background-image: url('../images/film-bg15.png');
     background-size: 10;
     background-repeat: repeat;
     font-family: 'kalam';
@@ -88,6 +88,7 @@ section h1 {
     transform: scale(1.2) rotate(8deg);
     box-shadow: -3px 2px 10px rgba(0, 0, 0, .5),
         inset 0 0 20px 10px rgba(0, 0, 0, .1);
+    color: #FCBF07;
 }
 
 
@@ -213,7 +214,7 @@ th:last-child {
 
 .btn-remove-cart {
     border-radius: 50%;
-    background-image: url(/images/trash-bootstrap.svg);
+    background-image: url(../images/trash-bootstrap.svg);
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
