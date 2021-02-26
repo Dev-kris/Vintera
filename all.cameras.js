@@ -1,7 +1,7 @@
 async function getProducts() {
   const response = await fetch(api_url);
   const data = await response.json();
-
+  // creates html structure for each camera in api
   for (item of data) {
     const root = document.createElement("div");
     root.className = "col-md-4 product-grid";
