@@ -12,7 +12,7 @@ Per request, cart storage is handled by LocalStorage and SessionStorage, though 
 Cart storage remains indefinently (up to browser settings) and is cleared upon order confirmation. 
 
 ### Bootstrap 5
-Bootsrap's newest realease recently left Alpha build and entered open Beta, version V5.0.0-Beta2, which is what this project uses.
+Bootsrap's newest release recently left Alpha build and entered open Beta, version V5.0.0-Beta2, which is what this project uses.
 Notable features are the removal of jQuery dependancy and the introduction of Bootstrap's own icon set. 
 
 ## Project Installation
