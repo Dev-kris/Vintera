@@ -2,7 +2,7 @@
 This project is a minimum viable product website for an ecomerce company.
 The website required a homepage, multi-product page, single-product page, shopping cart with checkout, and an order confirmation page.
 No frameworks were allowed so the frontend site is built with vanilla JS.
-The backend was provided and is handled by a NODE server and MongoDB.
+The backend was provided and is handled by an Express server and MongoDB.
 
 ### API
 Each product is added dynamically through an API fetch, allowing for flexability in product offering without modifying the html.
